@@ -5,6 +5,10 @@ import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import java.io.File;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.OutputType;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -60,7 +64,7 @@ public class OwnerProfilePageTest extends Base {
         }
 		
 	}
-	@Test(priority = 1, alwaysRun=true)
+// 	@Test(priority = 1, alwaysRun=true)
 	public void verifyDetailsInProfilePage() throws InterruptedException {
 		Thread.sleep(5000);
 		Assert.assertTrue(ownerProfilePage.profilePicture.isDisplayed(), "Profile Picture isn't displayed");
@@ -128,12 +132,18 @@ public class OwnerProfilePageTest extends Base {
 		
 	}
 	@Test(priority = 3, alwaysRun=true)
-	public void verifyThatTheUserCanLogOutTheAccountByClickingOnTheLogoutButton() {
-		
-		ownerProfilePage.logOutButton.click();
-		ExtentManager.getExtentTest().log(Status.INFO, "clicked on logout button");
-		Assert.assertTrue(launchPage.continueAsGuestButton.isDisplayed(), "Logout wasn't successfull");
-		ExtentManager.getExtentTest().log(Status.PASS, "Logout was successful");
+	public void verifyThatTheUserCanLogOutTheAccountByClickingOnTheLogoutButton()throws IOException {
+		try{
+			File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(file, new File("screen.jpg"));
+			ownerProfilePage.logOutButton.click();
+			ExtentManager.getExtentTest().log(Status.INFO, "clicked on logout button");
+			Assert.assertTrue(launchPage.continueAsGuestButton.isDisplayed(), "Logout wasn't successfull");
+			ExtentManager.getExtentTest().log(Status.PASS, "Logout was successful");
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
 		
 	}
 	@Test(priority = 5, alwaysRun=true)
