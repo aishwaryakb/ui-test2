@@ -91,7 +91,7 @@ public class OwnerProfilePageTest extends Base {
 		ExtentManager.getExtentTest().log(Status.PASS, "LogOut Button is displayed");
 	}
 	
-	@Test(priority = 2, alwaysRun=true)
+// 	@Test(priority = 2, alwaysRun=true)
 	public void verifyThatTheNameEmailAddressAndPhoneNumberFieldsAreNonEditable() throws InterruptedException {
 		Thread.sleep(5000);
 		String preSetFieldValue;
@@ -147,7 +147,7 @@ public class OwnerProfilePageTest extends Base {
 		}
 		
 	}
-	@Test(priority = 5, alwaysRun=true)
+// 	@Test(priority = 5, alwaysRun=true)
 	public void verifyThatTheUserIsNavigatingToTheHomeScreenWhenClickingOnTheBrensIconFromOwnerProfilePage() throws InterruptedException {
 		driver.findElementByXPath("//*[@resource-id ='RNE__Image']").click();
 		myHomePage.homePageVerification();
@@ -155,7 +155,7 @@ public class OwnerProfilePageTest extends Base {
 				+ " Screen When clicking on the Brens Icon from Owner Profile Page");
 	}
 	
-	@Test(enabled=false)
+// 	@Test(enabled=false)
 	public void verifyThatUserCanUpdateProfilePictureFromTheProfileScreen() throws InterruptedException {
 		String expectedToastMessage = "Customer's Profile Photo updated successfully";
 		Thread.sleep(4000);
@@ -170,7 +170,7 @@ public class OwnerProfilePageTest extends Base {
 		String actualToastMessage = driver.findElementByXPath("//android.widget.Toast[1]").getAttribute("name");
 		Assert.assertEquals(actualToastMessage, expectedToastMessage);
 	}
-	@Test(enabled=false)
+// 	@Test(enabled=false)
 	public void verifyThatUserCanDeleteProfilePictureFromTheProfileScreen() throws InterruptedException {
 		String expectedToastMessage = "Profile image deleted";
 		Thread.sleep(4000);
