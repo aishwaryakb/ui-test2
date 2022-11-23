@@ -5,7 +5,7 @@
 	   	<listener class-name="com.bren.qa.listeners.ListenerClass"></listener>
 	   	<listener class-name="com.bren.qa.listeners.AnnotationTransformer"></listener>
 	</listeners>
-	<test name="test1">
+<!-- 	<test name="test1">
 		<classes>
 			<class name="com.bren.qa.testcases.OwnerProfilePageTest" />
 		</classes>
@@ -109,7 +109,7 @@
 		<classes>
 			<class name="com.bren.qa.testcases.LaunchPageTest" />
 		</classes>
-	</test> 
+	</test>  -->
 	<test name="test22">
 		<classes>
 			<class name="com.bren.qa.testcases.ApartmentDetailPageTest" />
