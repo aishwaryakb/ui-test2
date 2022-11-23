@@ -141,9 +141,8 @@ public class ApartmentDetailPageTest extends Base {
 	public void verifySeeAllImagesClickingInViewGallery() throws InterruptedException {
 		apartmentDetailPage.clickViewGallery();
 		Thread.sleep(5000);
-		System.out.println(driver.getPageSource());
-		Thread.sleep(20000);
-		System.out.println(driver.getPageSource());
+		apartmentDetailPage.shareCloseIconAndTitle.isDisplayed();
+		driver.manage().timeouts().implicitlyWait(240, TimeUnit.SECONDS);
 		apartmentDetailPage.swipeGalleryImages();
 		Assert.assertEquals(apartmentDetailPage.getCurrentImagePosition(), apartmentDetailPage.getImageCount(), "All images in the gallery section is viewed ");
 	}
