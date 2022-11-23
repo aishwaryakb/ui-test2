@@ -9,6 +9,7 @@ public final class ScreenshotUtil {
 			return ((TakesScreenshot)Base.driver).getScreenshotAs(OutputType.BASE64);
 		}catch(Exception e){
 			System.out.println(e);
+			return ((TakesScreenshot)Base.driver).getScreenshotAs(OutputType.BASE64);
 		}
 		
 	}
