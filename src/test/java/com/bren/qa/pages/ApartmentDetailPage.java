@@ -23,6 +23,8 @@ public class ApartmentDetailPage extends Base{
 	WebElement takeVirtualTourButton;
 	@FindBy(xpath = "//*[@resource-id = 'apartmentName']")
 	public WebElement apartmentTitle;
+	@FindBy(xpath = "//*[@resource-id = 'shareCloseIconAndTitle']")
+    public WebElement shareCloseIconAndTitle;
 	@FindBy(xpath = "//*[@resource-id = 'shareAndDownloadIcons']")
 	WebElement shareAndDownloadIcons;
 	@FindBy(xpath = "//*[@resource-id = 'commonHeader']")
@@ -56,9 +58,9 @@ public class ApartmentDetailPage extends Base{
 	@FindBy(xpath = "//*[@text = 'REFER A FRIEND']")
 	public WebElement referAndEarnButton;
 	@FindBy(className = "android.widget.TextView")
-	WebElement imageCountElement;
+	public WebElement imageCountElement;
 	@FindBy(className = "android.widget.ImageView")
-	WebElement imageViewElement;
+	public WebElement imageViewElement;
 	@FindBy(xpath = "//*[@id = 'iconIcon']")
 	WebElement closeIcon;
 	@FindBy(className = "android.webkit.WebView")
